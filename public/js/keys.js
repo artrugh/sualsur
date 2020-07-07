@@ -1,2 +1,0 @@
-export const stripeKey = 'pk_test_51Gtw8OCLbXZbZerazjyJt6hxS1y4OOCeHo31mqvc4VUcbIherrQDuWwbX9o62cJXXBN2vX0vyS4xl4V8w9aXEGr800PVsjn9Db'
-export const mapKey = 'pk.eyJ1IjoiYXJ0dXJvcnVnaCIsImEiOiJja2I5M3RpdHAwYWc4MnZvMWNqdW90aG1jIn0.XmKzxTodoHQrSSqe2J1RsA'
