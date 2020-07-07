@@ -1,0 +1,9 @@
+.login-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: $color-white;
+  padding: 5rem 7rem;
+  border-radius: 5px;
+
+  @include boxShadow(0 2.5rem 8rem 2rem, 0.06);
+}

@@ -1,0 +1,18 @@
+extends base/base.pug
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg= `Agrega tu historia sobre la ${tour.name}`
+      form.form.form--review
+        .form__group
+          label.form__label(for='title') Título
+          input#title.form__input.form__input--grey(type='text', placeholder='título',maxlength='40', minlength='10', autocomplete='title', required)
+        .form__group
+          label.form__label(for='rating') Ranking
+          input#rating.form__input.form__input--grey(type='number', placeholder='de 1-5 estrellas',max='5', min='1', autocomplete='rating', required)
+        .form__group.ma-bt-md
+          label.form__label(for='review') Historia
+          textarea#review.form__input.form__input--grey(type='text', placeholder='escribe una emocionante historia...', maxlength='200', minlength='150', autocomplete='review',required)
+        .form__group
+          button#btn-review.btn.btn--primary(data-tour-id=`${tour.id}`)  Guardar historia

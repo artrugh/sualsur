@@ -1,0 +1,32 @@
+mixin img(index)
+    img(srcset=`img/nat-${index}.jpg 300w, img/nat-${index}-large.jpg 1000w`
+        sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt=`Photo ${index}`
+        class=`composition__photo composition__photo--p${index}` src=`img/nat-${index}-large.jpg`)
+mixin About()
+    .main
+        .u-center-text.u-margin-bottom-big
+            h2.heading-secondary.heading-secondary--animated El viaje es semilla y el camino su tierra
+        .row
+            .composition
+                +img(1)
+                +img(2)
+                +img(3)
+            .text
+                h3.heading-tertiary.heading-tertiary--justify.u-margin-bottom-small.u-margin-top-small Son dos los ejes que articulan las Travesías: el caminar y el encuentro, ambos entendidos como procesos de aprendizaje individual y grupal
+                p.paragraph Sin duda, existen muchas formas de viajar. Sin embargo hay una de ellas que solo experimentarás junto a Subiendo al Sur. Esta oportunidad se presenta una vez en la vida, puedes permanecer indiferente o iniciar un camino que conduce a tierras lejanas y pueblos inhóspitos. Naturaleza, cultura, desafíos, compañerismo, transformación son solo algunas de las etapas de esta travesía vital, única e irrepetible de la que no hay vuelta atrás.
+                if(about)
+                    p.paragraph Cuando tomas un vehículo sales y llegas, pero cuando viajas a pie algo madura. El camino está compuesto de múltiples llegadas. Llegas a una flor, o  a un arenal, a un desierto o a una laguna de altura, en donde hay distintos olores, colores y sonidos. En el caminar te interrogas e interrogas al viaje.
+                    p.paragraph Siempre caminas al encuentro, pero no solo de preguntas sino también de otros. Seguir las huellas de los pobladores por caminos centenarios, recorrer el material viviente de las tierras del Sur, comer junto a su gente, participar de sus fiestas y sondear su pasado en sus cuentos populares y yacimientos arqueológicos, son un pretexto para adentrarte en la idiosincrasia de estos pueblos, en sus contextos sociales, culturales y ecológicos, y en las problemáticas particulares de cada uno. Pero también tú eres un protagonista activo. Propones y realizas una actividad, aportando tus conocimiento e inquietudes a quienes visitas y a tus compañeros.
+                    p.paragraph Al fin y al cabo, la Travesía no es el relato de cuatro grande semanas, sino más bien la historia de un grupo de personas que viven juntos un trecho de sus vidas, con similares ganas y conjunción de ensueño. En ese andar sin rumbo por el Sur, has cambiado. Ya no eres tú, o por lo menos ya no eres el mismo de antes.
+                else
+                    p.paragraph Cuando tomas un vehículo sales y llegas, pero cuando viajas a pie...
+                    a.btn-text(href="/about") Seguir leyendo&rarr;
+                
+
+
+
+if(home)
+    section.section-about   
+        +About()       
+else
+    +About()

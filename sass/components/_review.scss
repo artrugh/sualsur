@@ -1,0 +1,82 @@
+.reviews {
+  padding: 5rem 0;
+  display: grid;
+  grid-column-gap: 6rem;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__card {
+    width: 30rem;
+    padding: 4rem;
+    background-color: $color-grey-light-1;
+    border-radius: 3px;
+    scroll-snap-align: center;
+    @include flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    @include boxShadow(0 1.5rem 4rem, 0.15);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    width: 2rem;
+  }
+
+  &__avatar {
+    @include flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &-img {
+      height: 4.5rem;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__user {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__rating {
+    margin-top: auto;
+    @include flex;
+  }
+
+  &__star {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1px;
+
+    &--active {
+      fill: $color-primary;
+    }
+
+    &--inactive {
+      fill: $color-grey-dark-2;
+    }
+  }
+}

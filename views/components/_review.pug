@@ -1,0 +1,23 @@
+-const heading = home ? 'Percepciones sualsureñas' : title === ' Reviews' ? 'Los Sualsureños' : !reviews[0] ? 'Aún no escribiste tu historia' : 'Mis historias'
+
+section.section-stories
+    if(home)
+        .bg-video
+            video.bg-video__content(autoplay muted loop)
+                source(src="img/video.mp4" type="video/mp4")
+                source(src="img/video.webm" type="video/webm")
+    .u-center-text.u-margin-bottom-medium
+        h2.heading-secondary.heading-secondary--animated= heading
+    each review in reviews
+        .row
+            .story 
+                if(heading !== 'My Reviews')
+                    figure.story__shape
+                        img.story__img(src= `/img/users/${review.user.photo}`, alt=`${review.user.name}`)
+                        figcaption.story__caption #{review.user.name}
+                .story__text
+                    h3.heading-tertiary.u-margin-bottom-small=`${review.title ? review.title : "We make people genuinely happy"}`
+                    p #{review.review}
+    if(home)
+        .u-center-text.u-margin-top-huge
+            a.btn-text(href="/reviews") más historias &rarr;    

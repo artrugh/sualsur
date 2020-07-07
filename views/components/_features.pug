@@ -1,0 +1,13 @@
+mixin featureItem(iconClassName, heading, parragraph)
+    .col-1-of-4
+        .feature-box
+            i(class = `feature-box__icon icon-basic-${iconClassName}`)
+            h3.heading-tertiary.u-margin-bottom-small #{heading}
+            p.feature-box__text #{parragraph}
+
+section.section-features
+    .row
+        +featureItem('world', 'Explore the world', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.')
+        +featureItem('compass', 'Meet nature', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.')
+        +featureItem('map', 'Find your way', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.')
+        +featureItem('heart', 'Live healthier life', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.')

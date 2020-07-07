@@ -1,0 +1,48 @@
+.alert {
+  position: fixed;
+  top: 16.5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: $color-white;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1.6rem 15rem;
+
+  animation-name: dropAlarm;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+
+  cursor: pointer;
+
+  @include transitionAll;
+
+  // @include  absCenter;
+  @include boxShadow(0 2rem 4rem, 0.25);
+
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1.6rem 8rem;
+  }
+
+  &--success {
+    background-color: $color-secondary-dark;
+  }
+
+  &--cookies {
+    background-color: rgba($color-tertiary-light, 0.3);
+  }
+
+  &--error {
+    background-color: $color-primary;
+  }
+
+  &:hover {
+    top: 14%;
+    text-shadow: 0 0.7rem 1rem $color-black;
+  }
+}

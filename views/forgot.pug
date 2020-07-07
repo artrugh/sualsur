@@ -1,0 +1,12 @@
+extends base/base.pug
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Manda un email para reformatear tu contraseña
+      form.form.form--forgot
+        .form__group
+          label.form__label(for='email') Email
+          input#email.form__input.form__input--grey(type='email', placeholder='you@example.com', autocomplete='email', required)
+        .form__group
+          button.btn.btn--primary enviar email

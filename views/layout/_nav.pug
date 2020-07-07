@@ -1,0 +1,30 @@
+mixin navItem(link, text)
+    li.nav__item
+        a.nav__link(href=`${link}`) #{text}
+.nav
+    input.nav__checkbox(type="checkbox" id="navi-toggle")
+    label.nav__button(for="navi-toggle")
+        span.nav__icon &nbsp;
+    .nav__background &nbsp;
+    nav.nav__nav
+        ul.nav__list
+            +navItem('/about', 'Sobre SuAlSur') 
+            +navItem('/tours', 'Travesías') 
+            +navItem('/reviews', 'Historias') 
+            +navItem('/signup', 'Se un sualsureño') 
+            +navItem('/#section-contact', 'Contáctanos')
+if(!home)
+    header.header__nav
+        a.nav__logo.nav__el(href='/')
+            picture.nav__logo--icon
+                source(srcset="/img/logo-small.png" media="(max-width: 37.5em)")
+                img(srcset="/img/logo-small.png" alt="Full logo" src="img/logo-green-small.png")
+        nav.nav__user
+            if user
+                a.nav__el.nav__el--logout Log out
+                a.nav__el(href='/me')
+                    img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                    span= user.name.split(' ')[0]
+            else
+                a.nav__el(href='/login') Login
+                a.nav__el.nav__el--cta(href='/signup') Sign up 

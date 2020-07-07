@@ -1,0 +1,28 @@
+section#section-tours.section-tours
+    .u-center-text.u-margin-bottom-big
+        h2.heading-secondary.heading-secondary--animated Travesías populares
+    .row
+        each tour, index in tours
+
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__header
+                            .card__picture
+                                .card__picture-overlay(class = `card__picture-overlay--backgroundimg--${index + 1}`) &nbsp;
+                                img.card__picture-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+                            h3.heading-tertiary.heading-tertiary--absolute(class = `heading-tertiary--background--${index + 1}`)
+                                span= tour.name
+
+                        .card__details
+                            ul
+                                li= `${tour.duration} day tours`
+                                li= `Up to ${tour.maxGroupSize} people`
+                                li= `${tour.guides.length} tours guides`
+                                li= `Difficulty: ${tour.difficulty}`
+                    div(class = `card__side card__side--back card__side--back-${index + 1}`)
+                        .card__cta
+                            .card__price-box
+                                p.card__price-only Only
+                                p.card__price-value= `$${tour.price}`
+                            a.btn.btn--white(href=`#popup-${tour.slug}`) See more!

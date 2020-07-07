@@ -1,0 +1,12 @@
+extends baseEmail
+
+block content
+    p Tienes un mensaje
+    h3 información general:
+    ul
+        li asunto: #{subject}
+        li nombre: #{firstName}
+        li email: #{email}
+    h3= content
+    
+    

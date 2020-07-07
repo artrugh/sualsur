@@ -1,0 +1,24 @@
+extends base/base.pug
+
+block content
+    main.main
+        .login-form
+            h2.heading-secondary.ma-bt-lg Registrate y se un sualsureño!
+            form.form.form--signup
+                .form__group
+                    label.form__label(for='name') Nombre
+                    input#name.form__input.form__input--grey(type='text', placeholder='tu nombre', autocomplete='username', required)
+                .form__group
+                    label.form__label(for='email') Email
+                    input#email.form__input.form__input--grey(type='email', placeholder='you@example.com', autocomplete='email', required)
+                .form__group.ma-bt-md
+                    label.form__label(for='password') Contraseña
+                    input#password.form__input.form__input--grey(type='password', placeholder='••••••••', required, minlength='8', autocomplete='current-password')
+                .form__group.ma-bt-md
+                    label.form__label(for='new-password') Confirmar Contraseña
+                    input#new-password.form__input.form__input--grey(type='password', placeholder='••••••••', required, minlength='8', autocomplete='new-password')
+                .form__group.form__photo-upload
+                    input.form__upload(type = 'file' accept='image/*', id = 'photo', name = 'photo')
+                    label(for ='photo') foto de perfil
+                .form__group
+                    button.btn.btn--primary Registrarse

@@ -1,0 +1,124 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+
+  background-color: $color-background;
+
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  display: grid;
+  grid-template-columns: 15rem auto;
+
+  @include boxShadow(0 3rem 6rem, .1);
+
+  @include respond(tab-port) {
+
+    width: 100%;
+    padding: 4rem;
+    transform: skewX(-10deg);
+
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+    display: block;
+  }
+
+  &>* {
+    transform: skewX(12deg);
+
+    @include respond(tab-port) {
+      transform: skewX(10deg);
+    }
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  &__shape {
+
+    width: 13rem;
+    height: 13rem;
+    transform: translateX(-3rem) skewX(12deg);
+    margin: 0 auto 2rem auto;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+
+    }
+
+    @include respond(tab-port) {
+      width: 10rem;
+      height: 10rem;
+      transform: translateX(-3rem) skewX(10deg);
+
+    }
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+      float: left;
+      margin-left: 2rem;
+    }
+  }
+
+  &__img {
+    height: 120%;
+    transform: translateX(-1rem) scale(1);
+    backface-visibility: hidden;
+    
+    @include transitionAll;
+
+  }
+
+  &__text {
+    transform: skewX(12deg);
+    text-align: justify;
+
+    @include respond(tab-port) {
+      transform: skewX(10deg);
+
+    }
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    backface-visibility: hidden;
+
+    @include transitionAll;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-2.3rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}

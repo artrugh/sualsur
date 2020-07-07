@@ -1,0 +1,30 @@
+each tour, index in tours
+    a.popup(id = `popup-${tour.slug}` href= '/#section-tours')
+        .popup__content
+            .popup__left
+                img.popup__img(src=`/img/tours/${tour.images[0]}` alt="Tour photo")
+                img.popup__img(src=`/img/tours/${tour.images[1]}` alt="Tour photo")
+            .popup__right
+                .row
+                    .popup__close &times;
+                    h2.heading-secondary.u-margin-bottom-small= tour.name
+                    h3.heading-tertiary.u-margin-bottom-small= tour.summary
+                    p.popup__text.u-margin-bottom-medium.paragraph= tour.description
+
+                    .grid-4-rows
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-map-pin')
+                            span= tour.startLocation.description
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-calendar')
+                            span= tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-flag')
+                            span= `${tour.locations.length} stops`
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            span= `${tour.maxGroupSize} people`

@@ -1,0 +1,18 @@
+.picture-box {
+  &__img {
+    display: block;
+    width: 100%;
+    height: 110%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    &--1 {
+      padding-top: 15%;
+    }
+    &--2 {
+      padding-bottom: 15%;
+    }
+    &--3 {
+      padding-bottom: 27%;
+    }
+  }
+}

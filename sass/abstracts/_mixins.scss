@@ -1,0 +1,140 @@
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin boxShadow($position, $opacity) {
+  -webkit-box-shadow: $position rgba($color-black, $opacity);
+  box-shadow: $position rgba($color-black, $opacity);
+}
+
+@mixin transitionAll {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@mixin backgroundImageWhite($url) {
+  background-image: linear-gradient(105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%),
+    url($url);
+  background-image: -webkit-gradient(105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%),
+    url($url);
+}
+
+@mixin backgroundImageGreen($url) {
+  background-image: -webkit-gradient(linear,
+      left top,
+      right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+    url($url);
+  background-image: linear-gradient(to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+    url($url);
+}
+
+@mixin backgroundImage($color-light, $color-dark, $url) {
+  background-image: -webkit-gradient(linear,
+      left top,
+      right bottom,
+      rgba($color-light, 0.8),
+      rgba($color-dark, 0.8)),
+    url($url);
+  background-image: linear-gradient(to right bottom,
+      rgba($color-light, 0.8),
+      rgba($color-dark, 0.8)),
+    url($url);
+}
+
+@mixin backgroundImageRed {
+  background-image: -webkit-gradient(linear,
+      left top,
+      right top,
+      from($color-secondary-light),
+      to($color-secondary-dark));
+  background-image: linear-gradient(to right,
+      $color-secondary-light,
+      $color-secondary-dark);
+}
+
+@mixin clipPath($x, $y) {
+  -webkip-clip-path: polygon(0 $x, 100% 0, 100% $y, 0 100%);
+  clip-path: polygon(0 $x, 100% 0, 100% $y, 0 100%);
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+
+ 0 - 600px: Phone
+ 600-900px: Tablet
+ 900-1200px: Tablet Landscape
+ [1200-1800px] is where our normal style applies
+ 1200px + : Big Screens
+
+ breakpoints arguments choices:
+  
+ - phone
+ - tab-port
+ - tab-land
+ - big-desktop
+
+ORDER: base + typo > general layout + grid > page layout > components
+
+ */
+
+// 1em = 16px
+@mixin respond($breakpoint) {
+
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 125em) {
+      // + 1200px
+      @content;
+    }
+  }
+}

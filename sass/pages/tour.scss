@@ -1,0 +1,125 @@
+// SECTION HEADER
+.section-header {
+  position: relative;
+  height: 38vw;
+  clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+  -webkit-clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+
+  @include respond(tab-port) {
+    height: 50vw;
+  }
+}
+
+// SECTION DESCRIPTION
+.section-description {
+  background-color: $color-grey-light-1;
+  margin-top: calc(0px - var(--section-rotate));
+
+  @include flex;
+
+  @include respond(phone) {
+    // margin-top: 0;
+    display: block;
+  }
+
+  &>* {
+    padding: 0 8vw;
+    padding-top: 14vw;
+    padding-bottom: calc(1vw + var(--section-rotate));
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+
+
+  }
+}
+
+//SECTION PICTURES
+
+.section-pictures {
+  @include flex;
+
+  clip-path: polygon(0 var(--section-rotate),
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+  -webkit-clip-path: polygon(0 var(--section-rotate),
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+  margin-top: calc(0px - var(--section-rotate));
+  position: relative;
+  z-index: 800;
+}
+
+// SECTION MAP
+
+.section-map {
+  z-index: -1;
+  position: relative;
+  height: 65rem;
+  margin-top: calc(0px - var(--section-rotate));
+}
+
+// SECTION REVIEW
+.section-reviews {
+  margin-top: calc(0px - var(--section-rotate));
+  padding: calc(5rem + var(--section-rotate)) 0;
+  position: relative;
+  z-index: 800;
+  background: -webkit-gradient(linear,
+      left top,
+      right bottom,
+      from(rgba($color-primary-light, 0.8)),
+      to(rgba($color-primary-dark, 0.8)));
+  background: linear-gradient(to right bottom,
+      $color-primary-light,
+      $color-primary-dark);
+  clip-path: polygon(0 var(--section-rotate),
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+  -webkit-clip-path: polygon(0 var(--section-rotate),
+      100% 0,
+      100% calc(100% - var(--section-rotate)),
+      0 100%);
+}
+
+// SECTION CTA
+.section-cta {
+  margin-top: calc(0px - var(--section-rotate));
+  padding: 3rem;
+  padding-bottom: 11rem;
+  padding-top: calc(15rem + var(--section-rotate));
+  background-color: $color-grey-light-1;
+}
+
+// TOUR HEADER
+
+.header__hero {
+  height: 100%;
+
+  &-img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    -o-object-position: 50% 25%;
+    object-position: 50% 55%;
+  }
+
+  &-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+
+    @include backgroundImageGreen('');
+  }
+}

@@ -1,0 +1,207 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    font-weight: 400;
+
+    font-size: $default-font-size;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    padding: 1.4rem 3.5rem;
+    display: inline-block;
+    border-radius: 10rem;
+
+    position: relative;
+    text-align: center;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /*Add later when we use this for the button in form*/
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+
+    @include transitionAll;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include transitionAll;
+  }
+
+  &:hover {
+    -webkit-transform: translateY(-0.3rem);
+    transform: translateY(-0.3rem);
+
+    @include boxShadow(0 1rem 2rem, 0.25);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+
+    @include boxShadow(0 0.5rem 1rem, 0.25);
+  }
+
+  &--white {
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-white;
+      color: $color-grey-dark-1;
+    }
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba($color-tertiary-light, 0.3);
+      color: $color-white;
+    }
+  }
+
+  &--primary {
+
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-primary;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-primary-dark;
+      color: $color-white;
+    }
+  }
+
+  &--secondary {
+
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-secondary;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-secondary-dark;
+      color: $color-white;
+    }
+  }
+
+  &--tertiary {
+
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-tertiary-light;
+      color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-tertiary-light;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-tertiary-dark;
+      color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* set the initial state */
+    animation-fill-mode: backwards;
+  }
+
+  &--small {
+    padding: 1.25rem 3rem !important;
+    font-size: 1.4rem !important;
+
+    &,
+    &:link,
+    &:visited {
+     
+      font-size: 1.4rem;
+      padding: 1.25rem 3rem;
+      border-radius: 10rem;
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 400;
+      border: none;
+
+      @include transitionAll;
+    }
+
+  }
+
+  &-text {
+    &,
+    &:link,
+    &:visited {
+      font-size: $default-font-size;
+      color: $color-primary;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid $color-primary;
+      padding: 3px;
+
+      @include transitionAll;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      transform: translateY(-2px);
+      -webkit-transform: translateY(-2px);
+
+      @include boxShadow(0 1rem 2rem, 0.15);
+    }
+
+    &:active {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+
+      @include boxShadow(0 0.5rem 1rem, 0.15);
+    }
+
+    &:focus {
+      outline: none;
+      outline: 0.3rem solid$color-primary;
+      outline-offset: 0.3rem;
+    }
+  }
+}

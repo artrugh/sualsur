@@ -1,0 +1,86 @@
+.footer {
+  background-color: $color-grey-light-1;
+  padding: 6rem 4rem 3rem 4rem;
+  font-size: 1.7rem;
+  margin: 0 !important;
+
+  @include flex;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  align-items: center;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__container {
+    @include respond(tab-port) {
+      @include flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    & img {
+      height: 2rem;
+    }
+  }
+
+
+  &__nav {
+    list-style: none;
+    @include flex;
+    justify-content: space-between;
+
+    & li {
+      margin: 1.5rem;
+      line-height: 1rem;
+      text-align: center;
+
+      @include respond(phone) {
+        font-size: 1.2rem
+      }
+
+      &:last-child {
+        margin-right: 0;
+        @include respond(tab-port) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+
+    & a {
+      color: $color-grey-dark-1;
+      text-decoration: none !important;
+
+      @include transitionAll;
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+      }
+    }
+
+    .icon {
+      height: 2rem;
+      width: 4rem;
+      fill: $color-grey-dark-3;
+
+      &:hover {
+        fill: $color-primary-dark;
+      }
+    }
+
+  }
+
+  &__copyright {
+
+    color: $color-grey-dark-2;
+    font-size: 0.9em;
+    float: right;
+  }
+}

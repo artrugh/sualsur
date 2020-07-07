@@ -1,0 +1,16 @@
+extends base/base.pug
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Iniciar sesión
+      form.form.form--login
+        .form__group
+          label.form__label(for='email') Email
+          input#email.form__input.form__input--grey(type='email', placeholder='you@example.com', autocomplete='email', required)
+        .form__group.ma-bt-md
+          label.form__label(for='password') Contraseña
+          input#password.form__input.form__input--grey(type='password', placeholder='••••••••', minlength='8', autocomplete='current-password', required)
+        .form__group.center
+          button.btn.btn--primary.btn--small.btn--login Login
+          button.btn.btn--secondary.btn--small.btn--forgot(type= 'button') Olvidaste tu contraseña?

@@ -1,0 +1,18 @@
+extends baseEmail
+
+block content
+    p Hola #{firstName},
+    p Bienvenid@ a Subiendo al Sur, ya eres un sualsureño!
+    p Somos una gran familia. Si lo has olvidado asegurate the upload tu photo/profile así te conocemos mejor!
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') Upload tu foto!
+    p Si necesitas cualquier ayuda, no dudes en contactarnos
+    p subiendoalsur.info@gmail.com
+    p - Sualsur, Madrid España.

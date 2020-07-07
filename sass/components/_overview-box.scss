@@ -1,0 +1,63 @@
+.overview-box {
+  background-color: $color-grey-light-1;
+  @include flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  &__group:not(:last-child) {
+    margin-bottom: 7rem;
+  }
+
+  &__detail {
+    font-size: 1.5rem;
+    @include flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 400;
+
+    & svg {
+      margin-right: 1.25rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: $color-primary;
+  }
+
+  &__label {
+    font-weight: 700;
+    margin-right: 2.25rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+
+  &__text {
+    text-transform: capitalize;
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 3.5rem;
+    margin-right: 1.25rem;
+  }
+}
+
+.description-box {
+  .description {
+    margin-right: 5rem;
+  }
+
+  .description__text {}
+
+  .description__text:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

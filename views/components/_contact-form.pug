@@ -1,0 +1,22 @@
+section#section-contact.section-contact
+    .row
+        .contact
+            .contact__form
+                form.form.form--contact
+                    .u-margin-bottom-medium
+                        h2.heading-secondary Contáctanos
+                    if(!user)
+                        .form__group
+                            input#email.form__input(type="text" placeholder="Email address", required)
+                            //- label.form__label(for="email") email name
+                        .form__group
+                            input#name.form__input(type="text" placeholder="Tu nombre", required)
+                            //- label.form__label(for="email") email name
+                    .form__group
+                        input#subject.form__input(type='text', placeholder='asunto',maxlength='40', minlength='10', autocomplete='subject', required)
+                        //- label.form__label(for='subject') Subject
+                    .form__group.ma-bt-md
+                        textarea#content.form__input(type='text', placeholder="Alguna duda, mándanos un mail!", maxlength='200', minlength='150', autocomplete='content',r equired)
+                        //- label.form__label(for='content') Content
+                    .form__group
+                        button.btn.btn--primary.btn--contact(type="submit") Enviar

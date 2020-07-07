@@ -1,0 +1,24 @@
+mixin social(link, icon)
+  li
+    a(href=`${link}` target = 'blank')
+      svg.icon
+        use(xlink:href=`img/icons.svg#icon-${icon}`)
+    
+
+footer.footer.paragraph
+  a(href='/')
+    .footer__logo.u-margin-bottom-small
+      img(src='/img/logo.png' alt='Natour logo')
+  .footer__container
+    ul.footer__nav.u-margin-bottom-small
+        +social('https://www.facebook.com/sualsur', 'facebook')
+        +social('https://www.youtube.com/channel/UCQciGT4p4tnSmMMLhemyboA', 'youtube')
+        +social('https://twitter.com/subiendoalsur', 'twitter')
+        +social('#', 'linkedin')
+
+        //- li: a(href='/about') sualsur
+        //- li: a(href='/tours') travesías
+        //- li: a(href='/reviews') historias
+        //- li: a(href='/signup') se/sualsureño
+        //- li: a(href='/#section-contact') contacto
+    p.footer__copyright &copy; design by Jonas & build by Arturo
